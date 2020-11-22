@@ -1,0 +1,48 @@
+{
+ "$schema": "https://qooxdoo.org/schema/Manifest-1-0-0.json",
+  "info" :
+  {
+    "name" : "iconfontviewer",
+
+    "summary" : "show all glyphs of registered iconfonts",
+    "description" : "",
+
+    "homepage" : "https://github.com/qooxdoo/iconfontviewer",
+
+    "license" : "MIT license",
+    "authors" : [
+      {
+        "name": "Henner Kollmann (hkollmann)",
+        "email": "Henner DOT Kollmann AT gmx DOT de"
+      }
+],
+
+    "version" : "1.0.0"
+  },
+
+  "provides" :
+  {
+    "namespace"   : "qxl.iconfontviewer",
+    "encoding"    : "utf-8",
+    "class"       : "source/class",
+    "resource"    : "source/resource",
+    "translation" : "source/translation",
+    "application": {
+        "class": "qxl.iconfontviewer.Application",
+        "theme": "qxl.iconfontviewer.theme.Theme",
+        "name": "Qooxdoo Icon Font Viewer",
+        "include": [
+           "qx.theme.iconfont.LoadMaterialIcons",
+           "qx.theme.iconfont.LoadMaterialIconsOutlined",
+           "qx.theme.iconfont.LoadMaterialIconsRound",
+           "qx.theme.iconfont.LoadMaterialIconsSharp",
+           "qx.theme.iconfont.LoadMaterialIconsTwoTone"
+        ]
+      }
+  },
+
+  "requires": {
+    "@qooxdoo/framework": "^6.0.0-beta",
+    "@qooxdoo/compiler" : "^1.0.0-beta"
+  }
+}
