@@ -5,6 +5,7 @@ Icon Fonts which are registered in the resources
 
 ## Online version (qx namespace)
 
+https://qooxdoo.org/qxl.iconfontviewer/#
 
 ## Adding an API viewer for your own code
 ```
