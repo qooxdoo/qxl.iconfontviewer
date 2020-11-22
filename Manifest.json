@@ -23,7 +23,8 @@
     "application": {
       "class": "qxl.iconfontviewer.Application",
       "theme": "qxl.iconfontviewer.theme.Theme",
-      "name": "Qooxdoo Icon Font Viewer",
+      "name": "iconfontviewer",
+      "title": "Qooxdoo Icon Font Viewer",
       "include": [
         "qx.theme.iconfont.LoadMaterialIcons",
         "qx.theme.iconfont.LoadMaterialIconsOutlined",
