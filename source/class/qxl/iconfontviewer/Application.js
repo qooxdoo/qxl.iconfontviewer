@@ -42,7 +42,7 @@ qx.Class.define("qxl.iconfontviewer.Application", {
         page.add(scroll, { edge: 0 });
         let list = new qx.ui.container.Composite(new qx.ui.layout.Flow());
         scroll.add(list);
-        qx.event.Timer.once(async function () {
+        qx.event.Timer.once(function () {
           for (let item of iconDb[font]) {
             let img = new qx.ui.form.Button(null, item.handle + "/40").set({
               toolTipText: item.name + " - click to copy",
@@ -56,7 +56,7 @@ qx.Class.define("qxl.iconfontviewer.Application", {
             }, this);
             list.add(img);
           }
-        }, this, 100)
+        }, this, 100);
       }
     }
   }
