@@ -8,8 +8,8 @@ qx.Class.define("qxl.iconfontviewer.Application", {
   extend: qx.application.Standalone,
 
   members: {
-    main: function () {
-      this.base(arguments);
+    main() {
+      super.main();
       let copy = document.createElement("input");
       document.body.appendChild(copy);
       // Document is the application root
@@ -24,7 +24,7 @@ qx.Class.define("qxl.iconfontviewer.Application", {
         }
         iconDb[re[1]].push({
           handle: key,
-          name: re[2]
+          name: re[2],
         });
       }
 
@@ -37,27 +37,37 @@ qx.Class.define("qxl.iconfontviewer.Application", {
         page.setLayout(new qx.ui.layout.Canvas());
         tabView.add(page);
         let scroll = new qx.ui.container.Scroll().set({
-          padding: [20, 20, 20, 20]
+          padding: [20, 20, 20, 20],
         });
+
         page.add(scroll, { edge: 0 });
         let list = new qx.ui.container.Composite(new qx.ui.layout.Flow());
         scroll.add(list);
-        qx.event.Timer.once(function () {
-          for (let item of iconDb[font]) {
-            let img = new qx.ui.form.Button(null, item.handle + "/40").set({
-              toolTipText: item.name + " - click to copy",
-              minWidth: 80,
-              minHeight: 80
-            });
-            img.addListener("click", function () {
-              copy.value = item.handle;
-              copy.select();
-              document.execCommand("copy");
-            }, this);
-            list.add(img);
-          }
-        }, this, 100);
+        qx.event.Timer.once(
+          function () {
+            for (let item of iconDb[font]) {
+              let img = new qx.ui.form.Button(null, item.handle + "/40").set({
+                toolTipText: item.name + " - click to copy",
+                minWidth: 80,
+                minHeight: 80,
+              });
+
+              img.addListener(
+                "click",
+                function () {
+                  copy.value = item.handle;
+                  copy.select();
+                  document.execCommand("copy");
+                },
+                this
+              );
+              list.add(img);
+            }
+          },
+          this,
+          100
+        );
       }
-    }
-  }
+    },
+  },
 });

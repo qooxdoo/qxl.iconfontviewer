@@ -8,11 +8,8 @@
 
 ************************************************************************ */
 
-qx.Theme.define("qxl.iconfontviewer.theme.Decoration",
-{
-  extend : qx.theme.indigo.Decoration,
+qx.Theme.define("qxl.iconfontviewer.theme.Decoration", {
+  extend: qx.theme.indigo.Decoration,
 
-  decorations :
-  {
-  }
+  decorations: {},
 });
